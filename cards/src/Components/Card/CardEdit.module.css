@@ -1,0 +1,15 @@
+.Test {
+    background: rgb(65, 74, 78);
+    height: 94.5vh;
+  }
+
+.button {
+
+  margin-right: 1rem;
+  margin-top: 1rem;
+  max-width: 93px;
+  height: 38px;
+  max-height: 38px;
+  overflow: hidden;
+
+}

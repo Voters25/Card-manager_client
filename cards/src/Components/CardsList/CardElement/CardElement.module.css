@@ -1,0 +1,24 @@
+.text {
+  overflow: hidden;
+  height: 10rem;
+  /* height: 12rem; */
+  text-overflow: ellipsis;
+}
+
+.btn {
+  /*max-width: 6rem;*/
+  max-width: 93px;
+  height: 38px;
+  max-height: 38px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 332px) {
+  .text {
+    height: 8rem;
+  }
+  /* .btn {
+    margin-top: 0.6rem;
+  } */
+}
