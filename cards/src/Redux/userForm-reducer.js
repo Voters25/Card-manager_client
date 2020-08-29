@@ -172,12 +172,12 @@ export const checkAUser = () => {
             .then(result => {
                 console.log(result);
 
-                if (result.error == undefined) {
+                if (result.email) {
                     localStorage.setItem('user', result.email);
                     dispatch(pushLoginToState());
                     dispatch(zeroingForm());
                     callForwardingToList();
-                } else {
+                } else if (result.error == 'Error login') {
                     localStorage.removeItem('user');
                     dispatch(removeUserName());
                     callForwardingToLogIn();
