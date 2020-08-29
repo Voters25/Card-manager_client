@@ -177,7 +177,7 @@ export const checkAUser = () => {
                     dispatch(pushLoginToState());
                     dispatch(zeroingForm());
                     callForwardingToList();
-                } else if (result.error == 'Error login') {
+                } else if (!result.email) {
                     localStorage.removeItem('user');
                     dispatch(removeUserName());
                     callForwardingToLogIn();
