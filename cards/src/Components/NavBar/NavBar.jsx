@@ -6,6 +6,11 @@ import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 export default class NavBar extends React.Component {
 
+    componentDidMount() {
+        this.props.haveAUser();
+    }
+
+
     render() {
 
         let userName = this.props.userName;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import NavBar from './NavBar';
 import { getList } from '../../Redux/cardList-reducer';
-import { callForwardingToLogIn, logOut } from '../../Redux/userForm-reducer';
+import { callForwardingToLogIn, logOut, checkAUser } from '../../Redux/userForm-reducer';
 import { callForwardingToList } from '../../Redux/cardEdit-reducer';
 
 
@@ -18,6 +18,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
 
+        haveAUser: () => {
+            dispatch(checkAUser());
+        },
         getAllCard: () => {
             callForwardingToList();
             dispatch(getList());

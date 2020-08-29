@@ -158,6 +158,42 @@ export const logOut = () => {
 /*===================================================================================*/
 
 
+/*===================================================================================*/
+// check a user
+
+export const checkAUser = () => {
+    return dispatch => {
+
+
+        fetch('https://card-manager.herokuapp.com/HaveAUser', {
+            credentials: "include"
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+
+                if (result.error == undefined) {
+                    localStorage.setItem('user', result.email);
+                    dispatch(pushLoginToState());
+                    dispatch(zeroingForm());
+                    callForwardingToList();
+                } else {
+                    localStorage.removeItem('user');
+                    dispatch(removeUserName());
+                    callForwardingToLogIn();
+                }
+                
+
+            }).catch(err => console.log(err));
+
+    }
+}
+
+
+/*===================================================================================*/
+
+
+
 
 export const callForwardingToLogIn = () => {
     history.push('/LogIn')
