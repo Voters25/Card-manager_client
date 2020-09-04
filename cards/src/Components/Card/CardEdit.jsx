@@ -13,8 +13,6 @@ export default class CardEdit extends React.Component {
         let editMode = this.props.editMode;
         let thisCreatePage = this.props.thisCreatePage;
         let cardId = this.props.cardId;
-        //console.log('This create page? ' + thisCreatePage);
-        //console.log('Id: ' + cardId);
 
 
         this.newTitleElement = React.createRef();
@@ -22,14 +20,12 @@ export default class CardEdit extends React.Component {
             let text = this.newTitleElement.current.value;
             this.props.changeCardTitle(text);
         }
-        //console.log(this.props.cardTitle);
 
         this.newTextElement = React.createRef();
         this.onChangeCardText = () => {
             let text = this.newTextElement.current.value;
             this.props.changeCardText(text);
         }
-        //console.log(this.props.cardText);
 
         this.newTagElement = React.createRef();
         this.onChangeCardTag = () => {
@@ -39,25 +35,20 @@ export default class CardEdit extends React.Component {
 
 
         this.editCard = () => {
-            //console.log('Edit');
             this.props.onEditCard();
         }
         this.saveCard = () => {
-            //console.log('Save');
             let postFormContent = {cardId, cardTitle, cardText, cardTag}
             this.props.saveThisCardChanges(postFormContent);
         }
         this.deleteCard = () => {
-            //console.log('Delete');
             this.props.deleteThisCard(cardId);
         }
         this.saveNewCard = () => {
-            //console.log('Save new card');
             let postFormContent = {cardTitle, cardText, cardTag}
             this.props.createNewCard(postFormContent);
         }
         this.deleteNewCard = () => {
-            //console.log('Delete new card');
             this.props.deleteNewCard();
         }
 

@@ -14,7 +14,6 @@ export default class CardList extends React.Component {
 
         this.getList = async () => {
             await this.props.getCardList();
-            //console.log(this.props.cardList);
         }
 
         this.newCard = () => {
@@ -32,8 +31,6 @@ export default class CardList extends React.Component {
         this.cardElements = this.props.cardList
         .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} tag={e.Tag} date={e.Date} id={e._id} getCardListWithTag={this.getCardListWithTag} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
 
-
-        // 'rgb(65, 74, 78)'
 
         return (
             <Row>
@@ -57,5 +54,3 @@ export default class CardList extends React.Component {
         )
     }
 }
-
-// <Button onClick={this.getList} className="mt-3 mb-1 ml-2">Update list</Button>

@@ -30,7 +30,6 @@ export default class LogIn extends React.Component {
             this.props.getRegPage();
         }
 
-        //             border border-warning rounded
 
 
         return (
@@ -50,7 +49,7 @@ export default class LogIn extends React.Component {
                             <Form.Control type="password" placeholder="Password" onChange={this.changePassword} ref={this.passwordFormElement} value={this.props.password} />
                         </Col>
                     </Form.Group>
-                    <Col /* xs={6} */ xs={12} sm={10} md={9} lg={8} xl={6} className="m-auto">
+                    <Col xs={12} sm={10} md={9} lg={8} xl={6} className="m-auto">
                     <Button onClick={this.sendForm} variant="primary" className="mb-2 mt-1">
                         Log in
                     </Button>

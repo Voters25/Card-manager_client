@@ -99,13 +99,12 @@ export const saveCardChanges = (postFormContent) => {
         })
             .then(res => res.text())
             .then(result => {
-                //console.log(result);
 
                 dispatch(zeroingCardId());
                 callForwardingToList();
                 
 
-            }).catch(err => //console.log(err))
+            }).catch(err => console.log(err))
     }
 }
 
@@ -140,11 +139,10 @@ export const createCard = (postFormContent) => {
         })
             .then(res => res.text())
             .then(result => {
-                //console.log(result);
 
                 callForwardingToList();
 
-            }).catch(err => //console.log(err))
+            }).catch(err => console.log(err))
     }
 }
 

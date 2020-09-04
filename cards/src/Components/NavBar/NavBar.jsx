@@ -26,15 +26,10 @@ export default class NavBar extends React.Component {
             this.props.onLogOut();
         }
 
-
-            //  ЕСЛИ ЗАЛОГИНЕН => ЕСТЬ КНОПКА ПОЛУЧИТЬ ЛИСТ
-            //  ТА ЖЕ ТЕМА С LOG OUT
-
         return (
 
-            <Navbar collapseOnSelect /* expand="md" - бургер-меню */ style={{ background: '#ff9800' }} >
+            <Navbar collapseOnSelect style={{ background: '#ff9800' }} >
                 <Container className="flex-nowrap" >
-                    {/* <NavbarToggle className="mr-md-3 " aria-controls="responsive-navbar-nav" /> */}
                     <NavbarCollapse id="responsive-navbar-nav" >
                         {userName ?
                         <React.Fragment>
@@ -45,32 +40,9 @@ export default class NavBar extends React.Component {
                         :
                             <Button onClick={this.getLogInPage} variant="outline-dark" className="mr-3">Log In</Button>
                         }
-                        {/*<Button variant="outline-info">Refresh</Button>*/}
                     </NavbarCollapse>
                 </Container>
             </Navbar>
         )
     }
 }
-
-
-
-
-/*
-
-<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
-                <Container>
-                    <NavbarToggle aria-controls="responsive-navbar-nav" />
-                    <NavbarCollapse id="responsive-navbar-nav" >
-                        <Nav className="mr-auto">
-
-                        </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-info">Search</Button>
-                        </Form>
-                    </NavbarCollapse>
-                </Container>
-            </Navbar>
-
-*/

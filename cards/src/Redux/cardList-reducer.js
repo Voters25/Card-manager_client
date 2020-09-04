@@ -57,7 +57,7 @@ export const getList = () => {
                 dispatch(changeList(result));
                 callForwardingToList();
 
-            }).catch(err => //console.log(err));
+            }).catch(err => console.log(err));
 
     }
 }
@@ -88,7 +88,7 @@ export const getListWithByTag = (tag) => {
 
                 dispatch(changeList(result));
 
-            }).catch(err => //console.log(err));
+            }).catch(err => console.log(err));
 
     }
 }
@@ -108,7 +108,6 @@ export const getCard = (id) => {
         })
             .then(res => res.json())
             .then(result => {
-                //console.log(result);
 
                 dispatch(changeCardContent(result));
                 dispatch(thisEditPage());
@@ -117,7 +116,7 @@ export const getCard = (id) => {
                 callForwardingToCard();
 
 
-            }).catch(err => //console.log(err))
+            }).catch(err => console.log(err))
     }
 }
 
@@ -144,11 +143,10 @@ export const deleteCard = (id) => {
         })
             .then(res => res.text())
             .then(result => {
-                //console.log(result);
 
                 reloadComponent();
 
-            }).catch(err => //console.log(err))
+            }).catch(err => console.log(err))
     }
 }
 
@@ -168,22 +166,6 @@ const reloadComponent = () => {
     history.push('/list');
 }
 
-
-/* let changeCardList = (result) => {
-    //console.log(result);
-    return {
-        type: 'CHANGE-CARD-LIST',
-        newList: result
-    }
-} */
-
-/* let changeTagList = (result) => {
-    //console.log(result);
-    return {
-        type: 'CHANGE-TAG-LIST',
-        newTags: result
-    }
-} */
 
 let changeList = (result) => {
     return {

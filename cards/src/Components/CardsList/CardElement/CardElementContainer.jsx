@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import CardElement from './CardElement';
-//import { getCard } from '../../../Redux/cardEdit-reducer';
 
 
 const mapStateToProps = (state) => {

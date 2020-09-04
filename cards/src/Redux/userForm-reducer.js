@@ -63,16 +63,12 @@ const userFormReducer = (state = initialState, action) => {
 // Log In
 
 
-                // https://card-manager.herokuapp.com
-
 export const sendLogInForm = (userForm) => {
     return dispatch => {
 
         let formData = new FormData();
         formData.append('email', userForm.email);
         formData.append('password', userForm.password);
-
-        //localhost:5000
         
 
         fetch('https://card-manager.herokuapp.com/Login', {
@@ -82,13 +78,12 @@ export const sendLogInForm = (userForm) => {
         })
             .then(res => res.json())
             .then(result => {
-                //console.log(result);
 
                 dispatch(pushLoginToState(result.email));
                 dispatch(zeroingForm());
                 callForwardingToList();
 
-            }).catch(err => //console.log(err))
+            }).catch(err => console.log(err))
     }
 }
 
@@ -114,12 +109,11 @@ export const sendRegistrationForm = (userForm) => {
         })
             .then(res => res.text())
             .then(result => {
-                //console.log(result);
 
                 dispatch(zeroingFormWithoutEmail());
                 callForwardingToLogIn();
 
-            }).catch(err => //console.log(err))
+            }).catch(err => console.log(err))
     }
 }
 
@@ -138,7 +132,6 @@ export const logOut = () => {
         })
             .then(res => res.text())
             .then(result => {
-                //console.log(result);
 
                 if (result == 'Succses') {
                     dispatch(zeroingForm());
@@ -147,7 +140,7 @@ export const logOut = () => {
                 }
                 
 
-            }).catch(err => //console.log(err));
+            }).catch(err => console.log(err));
 
     }
 }
@@ -168,7 +161,6 @@ export const checkAUser = () => {
         })
             .then(res => res.json())
             .then(result => {
-                //console.log(result);
 
                 if (result.email) {
                     dispatch(pushLoginToState(result.email));
@@ -179,7 +171,7 @@ export const checkAUser = () => {
                 }
                 
 
-            }).catch(err => //console.log(err));
+            }).catch(err => console.log(err));
 
     }
 }
