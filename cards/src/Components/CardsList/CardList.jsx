@@ -14,7 +14,7 @@ export default class CardList extends React.Component {
 
         this.getList = async () => {
             await this.props.getCardList();
-            console.log(this.props.cardList);
+            //console.log(this.props.cardList);
         }
 
         this.newCard = () => {
